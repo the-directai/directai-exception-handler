@@ -1,0 +1,13 @@
+package com.directai.directaiexceptionhandler;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class DirectaiExceptionHandlerApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DirectaiExceptionHandlerApplication.class, args);
+	}
+
+}
