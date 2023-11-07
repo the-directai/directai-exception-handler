@@ -1,5 +1,7 @@
 package com.directai.directaiexceptionhandler;
 
+import com.directai.directaiexceptionhandler.exception.DirectExceptionFrame;
+
 public class DirectServerExceptionCode {
     public static final DirectExceptionFrame D4000 =
             new DirectExceptionFrame("D4000", "Bad request");
