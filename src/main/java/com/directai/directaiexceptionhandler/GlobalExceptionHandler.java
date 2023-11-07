@@ -1,5 +1,6 @@
 package com.directai.directaiexceptionhandler;
 
+import com.directai.directaiexceptionhandler.exception.DirectException;
 import com.directai.directaiexceptionhandler.model.ErrorModel;
 import com.directai.directaiexceptionhandler.model.ErrorModelMultipleExceptions;
 import org.springframework.http.HttpHeaders;

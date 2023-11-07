@@ -1,6 +1,5 @@
 package com.directai.directaiexceptionhandler.model;
 
-import com.directai.directaiexceptionhandler.model.ErrorModel;
 import lombok.Getter;
 import lombok.Setter;
 
