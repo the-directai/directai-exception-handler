@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.directai</groupId>
+	<groupId>io.github.the-directai</groupId>
 	<artifactId>directai-exception-handler</artifactId>
 	<version>0.0.1</version>
 	<name>directai-exception-handler</name>
@@ -49,6 +49,14 @@
 			<url>http://www.opensource.org/licenses/mit-license.php</url>
 		</license>
 	</licenses>
+
+	<developers>
+		<developer>
+			<name>Julia Korzekwa</name>
+			<organization>DirectAI</organization>
+			<organizationUrl>https://directai.pl</organizationUrl>
+		</developer>
+	</developers>
 
 	<scm>
 		<connection>scm:git:git://github.com/the-directai/directai-exception-handler.git</connection>
@@ -114,7 +122,6 @@
 				<configuration>
 					<serverId>ossrh</serverId>
 					<nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-					<!--suppress UnresolvedMavenProperty -->
 					<autoReleaseAfterClose>${env.AUTO_RELEASE_AFTER_CLOSE}</autoReleaseAfterClose>
 				</configuration>
 			</plugin>
@@ -134,7 +141,6 @@
 								<arg>--pinentry-mode</arg>
 								<arg>loopback</arg>
 							</gpgArguments>
-							<!--suppress UnresolvedMavenProperty -->
 							<passphrase>${env.GPG_PASSPHRASE}</passphrase>
 						</configuration>
 					</execution>
