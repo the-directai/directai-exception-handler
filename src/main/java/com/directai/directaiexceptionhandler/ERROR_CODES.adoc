@@ -1,0 +1,14 @@
+== DirectExceptionHandler error codes
+
+In this document you can find list of error codes used within library and description of usage.
+
+== Error types
+* `B5XXX` - server error
+* `B4XXX` - request error
+
+== List of error codes
+* `D4000` - Bad request
+* `D4001` - Validation error
+* `D4002` - Multiple errors
+* `D4003` - Entity not found
+* `D5000` - Unknown exceptions
