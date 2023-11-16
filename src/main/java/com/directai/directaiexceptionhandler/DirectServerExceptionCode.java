@@ -9,8 +9,8 @@ public class DirectServerExceptionCode {
             new DirectExceptionFrame("D4001", "Validation error");
     public static final DirectExceptionFrame D4002 =
             new DirectExceptionFrame("D4002", "Multiple errors");
-    public static final DirectExceptionFrame D4004 =
-            new DirectExceptionFrame("D4004", "Entity not found");
+    public static final DirectExceptionFrame D4003 =
+            new DirectExceptionFrame("D4003", "Entity not found");
     public static final DirectExceptionFrame D5000 =
             new DirectExceptionFrame("D5000", "Unknown exception");
 

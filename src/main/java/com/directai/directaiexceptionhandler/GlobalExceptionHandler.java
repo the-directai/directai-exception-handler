@@ -16,20 +16,20 @@ public class GlobalExceptionHandler {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @ExceptionHandler(Exception.class)
-    ResponseEntity<ErrorModel> handleDirectException(Exception ex) {
-        log.error("Exception occurred", ex);
-        if (ex instanceof DirectException) {
-            DirectException directException = (DirectException) ex;
+    ResponseEntity<ErrorModel> handleDirectException(Exception exception) {
+        log.error("Exception occurred", exception);
+        if (exception instanceof DirectException) {
+            DirectException directException = (DirectException) exception;
             if (directException.getExceptions().isEmpty()) {
                 ErrorModel model = ErrorModel.builder()
-                        .errorCode(directException.getErrorCode().getErrorCode())
+                        .errorCode(directException.getErrorFrame().getErrorCode())
                         .description(directException.getDescription())
-                        .errorName(directException.getErrorCode().getErrorName())
+                        .errorName(directException.getErrorFrame().getErrorName())
                         .build();
                 return new ResponseEntity<>(model, new HttpHeaders(), directException.getHttpStatus());
             } else {
-                ErrorModelMultipleExceptions model = new ErrorModelMultipleExceptions(directException.getErrorCode().getErrorCode(),
-                        directException.getErrorCode().getErrorName(), directException.getDescription(), directException.getExceptions());
+                ErrorModelMultipleExceptions model = new ErrorModelMultipleExceptions(directException.getErrorFrame().getErrorCode(),
+                        directException.getErrorFrame().getErrorName(), directException.getDescription(), directException.getExceptions());
                 return new ResponseEntity<>(model, new HttpHeaders(), directException.getHttpStatus());
             }
         } else {

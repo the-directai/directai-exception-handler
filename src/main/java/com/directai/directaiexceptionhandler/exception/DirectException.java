@@ -1,6 +1,5 @@
 package com.directai.directaiexceptionhandler.exception;
 
-import com.directai.directaiexceptionhandler.MessageGenerator;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
@@ -13,87 +12,87 @@ import java.util.List;
 @Setter
 public class DirectException extends Exception {
     private final String description;
-    private final DirectExceptionFrame errorCode;
+    private final DirectExceptionFrame errorFrame;
     private final HttpStatus httpStatus;
     private final List<String> exceptions;
 
     public DirectException(String message) {
         super(message);
-        Assert.hasText(message, MessageGenerator.generateMessageConstructor("Message"));
+        Assert.hasText(message, "Message is required in this constructor.");
         description = null;
-        errorCode = null;
+        errorFrame = null;
         httpStatus = null;
         exceptions = new ArrayList<>();
     }
 
     public DirectException(String message, Throwable throwable) {
         super(message, throwable);
-        Assert.hasText(message, MessageGenerator.generateMessageConstructor("Message"));
+        Assert.hasText(message, "Message is required in this constructor.");
         description = null;
-        errorCode = null;
+        errorFrame = null;
         httpStatus = HttpStatus.BAD_REQUEST;
         exceptions = new ArrayList<>();
     }
 
     public DirectException(String message, String description) {
         super(message);
-        Assert.hasText(message, MessageGenerator.generateMessageConstructor("Message"));
-        Assert.hasText(description, MessageGenerator.generateMessageConstructor("Description"));
+        Assert.hasText(message, "Message is required in this constructor.");
+        Assert.hasText(description, "Description is required in this constructor.");
         this.description = description;
-        errorCode = null;
+        errorFrame = null;
         httpStatus = HttpStatus.BAD_REQUEST;
         exceptions = new ArrayList<>();
     }
 
     public DirectException(String message, String description, Throwable throwable) {
         super(message, throwable);
-        Assert.hasText(message, MessageGenerator.generateMessageConstructor("Message"));
-        Assert.hasText(description, MessageGenerator.generateMessageConstructor("Description"));
+        Assert.hasText(message, "Message is required in this constructor.");
+        Assert.hasText(description, "Description is required in this constructor.");
         this.description = description;
-        errorCode = null;
+        errorFrame = null;
         httpStatus = HttpStatus.BAD_REQUEST;
         exceptions = new ArrayList<>();
     }
 
-    public DirectException(String message, String description, DirectExceptionFrame errorCode) {
+    public DirectException(String message, String description, DirectExceptionFrame errorFrame) {
         super(message);
-        Assert.hasText(message, MessageGenerator.generateMessageConstructor("Message"));
-        Assert.hasText(description, MessageGenerator.generateMessageConstructor("Description"));
-        Assert.notNull(errorCode, MessageGenerator.generateMessageConstructor("Error code"));
+        Assert.hasText(message, "Message is required in this constructor.");
+        Assert.hasText(description, "Description is required in this constructor.");
+        Assert.notNull(errorFrame, "Error code is required in this constructor.");
         this.description = description;
-        this.errorCode = errorCode;
+        this.errorFrame = errorFrame;
         httpStatus = HttpStatus.BAD_REQUEST;
         exceptions = new ArrayList<>();
     }
-    public DirectException(String message, String description, DirectExceptionFrame errorCode, HttpStatus httpStatus) {
+    public DirectException(String message, String description, DirectExceptionFrame errorFrame, HttpStatus httpStatus) {
         super(message);
-        Assert.hasText(message, MessageGenerator.generateMessageConstructor("Message"));
-        Assert.hasText(description, MessageGenerator.generateMessageConstructor("Description"));
-        Assert.notNull(errorCode, MessageGenerator.generateMessageConstructor("Error code"));
+        Assert.hasText(message, "Message is required in this constructor.");
+        Assert.hasText(description, "Description is required in this constructor.");
+        Assert.notNull(errorFrame, "Error code is required in this constructor.");
         this.description = description;
-        this.errorCode = errorCode;
+        this.errorFrame = errorFrame;
         this.httpStatus = httpStatus;
         exceptions = new ArrayList<>();
     }
 
-    public DirectException(String message, String description, DirectExceptionFrame errorCode, HttpStatus httpStatus, List<String> exceptions) {
+    public DirectException(String message, String description, DirectExceptionFrame errorFrame, HttpStatus httpStatus, List<String> exceptions) {
         super(message);
-        Assert.hasText(message, MessageGenerator.generateMessageConstructor("Message"));
-        Assert.hasText(description, MessageGenerator.generateMessageConstructor("Description"));
-        Assert.notNull(errorCode, MessageGenerator.generateMessageConstructor("Error code"));
+        Assert.hasText(message, "Message is required in this constructor.");
+        Assert.hasText(description, "Description is required in this constructor.");
+        Assert.notNull(errorFrame, "Error code is required in this constructor.");
         this.description = description;
-        this.errorCode = errorCode;
+        this.errorFrame = errorFrame;
         this.httpStatus = httpStatus;
         this.exceptions = exceptions;
     }
 
-    public DirectException(String message, String description, DirectExceptionFrame errorCode, HttpStatus httpStatus, List<String> exceptions, Throwable cause) {
+    public DirectException(String message, String description, DirectExceptionFrame errorFrame, HttpStatus httpStatus, List<String> exceptions, Throwable cause) {
         super(message, cause);
-        Assert.hasText(message, MessageGenerator.generateMessageConstructor("Message"));
-        Assert.hasText(description, MessageGenerator.generateMessageConstructor("Description"));
-        Assert.notNull(errorCode, MessageGenerator.generateMessageConstructor("Error code"));
+        Assert.hasText(message, "Message is required in this constructor.");
+        Assert.hasText(description, "Description is required in this constructor.");
+        Assert.notNull(errorFrame, "Error code is required in this constructor.");
         this.description = description;
-        this.errorCode = errorCode;
+        this.errorFrame = errorFrame;
         this.httpStatus = httpStatus;
         this.exceptions = exceptions;
     }
